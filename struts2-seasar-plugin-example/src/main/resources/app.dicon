@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<!DOCTYPE components PUBLIC "-//SEASAR2.1//DTD S2Container//EN" "http://www.seasar.org/dtd/components23.dtd">
+<components>
+  <component class="org.seasar.struts2.example.AddServiceImpl" />
+  <component class="org.seasar.struts2.example.AddAction" instance="prototype" />
+  <component name="addDto" class="org.seasar.struts2.example.AddDto" instance="request" />
+</components>

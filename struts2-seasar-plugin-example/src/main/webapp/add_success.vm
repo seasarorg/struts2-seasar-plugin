@@ -1,0 +1,10 @@
+<html>
+  <head>
+    <title>struts2 seasar plugin Add Application Result</title>
+  </head>
+  <body>
+    result: ${addDto.arg1} + ${addDto.arg2} = ${addDto.result}
+    <hr />
+    <a href="index.html">struts2 seasar plugin Add Application</a>
+  </body>
+</html>
