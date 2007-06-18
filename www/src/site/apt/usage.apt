@@ -1,0 +1,68 @@
+使い方
+
+*設定
+
+Struts2 Seasar PluginのJarファイルと{{{http://s2xwork.sandbox.seasar.org/s2-xwork2/}S2XWork2}}のJarファイルをWEB-INF/libにコピーするだけで、
+ActionなどのインスタンスをS2Containerから取得するようになります。
+
+その他の機能
+
+*ValueStack経由でSeasar2のコンポーネントにアクセスする
+
+	S2CompontntInterceptorを使えば、ValueStack経由でSeasar2のコンポーネントにアクセス出来るようになります。これによりリクエストパラメータを直接Seasar2内のDtoにセットしたり、画面などのResultからSeasar2の2コンポーネントにアクセス出来るようになります。
+
+**diconファイル
+
+	S2CompontntInterceptorをdiconファイルに追加します。
+
+----------------------------------------
+<component class="org.seasar.xwork2.component.S2ComponentInterceptor" />
+----------------------------------------
+
+**struts.xml
+
+	interceptor要素でorg.seasar.xwork2.component.S2ComponentInterceptorを定義して、interceptor-ref要素でアクションに設定します。
+	
+----------------------------------------
+<?xml version="1.0"?>
+<!DOCTYPE xwork PUBLIC "-//OpenSymphony Group//XWork 1.1//EN" 
+    "http://www.opensymphony.com/xwork/xwork-1.0.dtd">
+<xwork>
+	<include file="webwork-default.xml" />
+	<package name="default" extends="webwork-default">
+		<interceptors>
+			<interceptor name="s2component"
+				class="org.seasar.xwork2.component.S2ComponentInterceptor" />
+			<interceptor-stack name="s2componentStack">
+				<interceptor-ref name="exception" />
+				<interceptor-ref name="alias" />
+				<interceptor-ref name="servlet-config" />
+				<interceptor-ref name="prepare" />
+				<interceptor-ref name="i18n" />
+				<interceptor-ref name="chain" />
+				<interceptor-ref name="s2component" />
+				<interceptor-ref name="model-driven" />
+				<interceptor-ref name="fileUpload" />
+				<interceptor-ref name="static-params" />
+				<interceptor-ref name="params" />
+				<interceptor-ref name="conversionError" />
+				<interceptor-ref name="validation">
+					<param name="excludeMethods">
+						input,back,cancel,browse
+					</param>
+				</interceptor-ref>
+				<interceptor-ref name="workflow">
+					<param name="excludeMethods">
+						input,back,cancel,browse
+					</param>
+				</interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<action name="add"
+			class="org.seasar.xwork.example.webwork.AddAction">
+			<interceptor-ref name="s2componentStack" />
+			<result name="success" type="velocity">add_success.vm</result>
+		</action>
+	</package>
+</xwork>
+----------------------------------------

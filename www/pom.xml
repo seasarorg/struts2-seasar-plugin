@@ -3,23 +3,23 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>org.seasar.maven-archetypes</groupId>
-	<artifactId>maven-archetypes-project</artifactId>
+	<groupId>org.seasar.struts2</groupId>
+	<artifactId>struts2-seasar-plugin-www</artifactId>
 	<version>0.0.1</version>
-	<name>Seasar Maven Archetypes</name>
+	<name>Struts Seasar Plugin</name>
 	<description>
 		Seasar Maven ArchetypesはMaven2を利用して各種プロジェクトのひな形を生成するプロジェクトです。
 	</description>
 	<packaging>pom</packaging>
 	<scm>
 		<connection>
-			scm:svn:https://www.seasar.org/svn/sandbox/seasar-maven-archetypes/trunk/
+			scm:svn:https://www.seasar.org/svn/sandbox/struts2-seasar-plugin/trunk/
 		</connection>
 		<developerConnection>
-			scm:svn:https://www.seasar.org/svn/sandbox/seasar-maven-archetypes/trunk/
+			scm:svn:https://www.seasar.org/svn/sandbox/struts2-seasar-plugin/trunk/
 		</developerConnection>
 		<url>
-			https://www.seasar.org/svn/sandbox/seasar-maven-archetypes/trunk/
+			https://www.seasar.org/svn/sandbox/struts2-seasar-plugin/trunk/
 		</url>
 	</scm>
 	<developers>

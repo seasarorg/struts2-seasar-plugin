@@ -1,0 +1,3 @@
+Struts2 Seasar Pluginとは
+
+  Struts2 Seasar Pluginは{{{http://struts.apache.org/2.x/}Struts2}}からS2Containerのコンポーネントを呼び出すライブラリです。
