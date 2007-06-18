@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="Shift_JIS"?>
-<project name="Seasar Maven Archetypes">
+<project name="Struts Seasar Plugin">
 	<skin>
 		<groupId>org.seasar.project</groupId>
 		<artifactId>seasar-skin</artifactId>
