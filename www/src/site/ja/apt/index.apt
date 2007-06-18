@@ -1,3 +1,7 @@
 Struts2 Seasar Pluginとは
 
   Struts2 Seasar Pluginは{{{http://struts.apache.org/2.x/}Struts2}}からS2Containerのコンポーネントを呼び出すライブラリです。
+
+更新履歴
+
+  * 2007-06-18 Struts2 Seasar Plugin 1.0.0をリリースしました。
