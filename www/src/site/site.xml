@@ -13,6 +13,8 @@
 	<body>
 		<menu name="Index">
 			<item name="Top" href="index.html" />
+			<item name="Download" href="download.html" />
+			<item name="Usage" href="usage.html" />
 		</menu>
 		<menu name="Link">
 			<item name="Seasar.org" href="http://www.seasar.org/" />
