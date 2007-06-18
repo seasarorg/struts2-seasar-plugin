@@ -7,9 +7,6 @@
 	<artifactId>struts2-seasar-plugin-www</artifactId>
 	<version>0.0.1</version>
 	<name>Struts Seasar Plugin</name>
-	<description>
-		Seasar Maven ArchetypesはMaven2を利用して各種プロジェクトのひな形を生成するプロジェクトです。
-	</description>
 	<packaging>pom</packaging>
 	<scm>
 		<connection>
