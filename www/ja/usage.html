@@ -15,7 +15,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
 <meta http-equiv="Content-Language" content="ja" /> 
 <meta http-equiv="Content-Style-Type" content="text/css" /> 
-<title>Struts Seasar Plugin - </title>
+<title>Struts2 Seasar Plugin - </title>
 <link rel="stylesheet" type="text/css" href="http://www.seasar.org/theme/main.css" media="screen,projection" />
 <link rel="stylesheet" type="text/css" href="http://www.seasar.org/theme/print.css" media="print" />
 <link href="./css/maven-base.css" type="text/css" rel="stylesheet" media="screen" />
@@ -127,7 +127,39 @@
 <div id="contents_center">
 
 <div id="article">
-<div class="section"><h2>使い方</h2><div class="section"><h3>設定</h3></div></div><div class="section"><h2>Struts2 Seasar PluginのJarファイルと<a href="http://s2xwork.sandbox.seasar.org/s2-xwork2/">S2XWork2</a>のJarファイルをWEB-INF/libにコピーするだけで、 ActionなどのインスタンスをS2Containerから取得するようになります。</h2></div><div class="section"><h2>その他の機能</h2><div class="section"><h3>ValueStack経由でSeasar2のコンポーネントにアクセスする</h3><p>S2CompontntInterceptorを使えば、ValueStack経由でSeasar2のコンポーネントにアクセス出来るようになります。これによりリクエストパラメータを直接Seasar2内のDtoにセットしたり、画面などのResultからSeasar2の2コンポーネントにアクセス出来るようになります。</p><div class="section"><h4>diconファイル</h4><p>S2CompontntInterceptorをdiconファイルに追加します。</p><div class="source"><pre>&lt;component class=&quot;org.seasar.xwork2.component.S2ComponentInterceptor&quot; /&gt;</pre></div></div><div class="section"><h4>struts.xml</h4><p>interceptor要素でorg.seasar.xwork2.component.S2ComponentInterceptorを定義して、interceptor-ref要素でアクションに設定します。</p><div class="source"><pre>&lt;?xml version=&quot;1.0&quot;?&gt;
+<div class="section"><h2>使い方</h2>
+<div class="section"><h3>設定</h3>
+<div class="section"><h4>Struts2 Seasa PluginとS2XWork2のライブラリを追加</h4>
+<p>Struts2 Seasar PluginのJarファイルと<a href="http://s2xwork.sandbox.seasar.org/s2-xwork2/" class="externalLink">S2XWork2</a>
+のJarファイルをWEB-INF/libにコピー</p>
+</div>
+<div class="section"><h4>web.xmlにS2ContainerListenerを追加</h4>
+<div class="source"><pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE web-app
+      PUBLIC &quot;-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN&quot;
+      &quot;http://java.sun.com/dtd/web-app_2_3.dtd&quot;&gt;
+&lt;web-app&gt;
+        &lt;listener&gt;
+                &lt;listener-class&gt;
+                        org.seasar.framework.container.servlet.S2ContainerListener
+                &lt;/listener-class&gt;
+        &lt;/listener&gt;
+&lt;/web-app&gt;</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="section"><h2>その他の機能</h2>
+<div class="section"><h3>ValueStack経由でSeasar2のコンポーネントにアクセスする</h3>
+<p>S2CompontntInterceptorを使えば、ValueStack経由でSeasar2のコンポーネントにアクセス出来るようになります。これによりリクエストパラメータを直接Seasar2内のDtoにセットしたり、画面などのResultからSeasar2の2コンポーネントにアクセス出来るようになります。</p>
+<div class="section"><h4>diconファイル</h4>
+<p>S2CompontntInterceptorをdiconファイルに追加します。</p>
+<div class="source"><pre>&lt;component class=&quot;org.seasar.xwork2.component.S2ComponentInterceptor&quot; /&gt;</pre>
+</div>
+</div>
+<div class="section"><h4>struts.xml</h4>
+<p>interceptor要素でorg.seasar.xwork2.component.S2ComponentInterceptorを定義して、interceptor-ref要素でアクションに設定します。</p>
+<div class="source"><pre>&lt;?xml version=&quot;1.0&quot;?&gt;
 &lt;!DOCTYPE xwork PUBLIC &quot;-//OpenSymphony Group//XWork 1.1//EN&quot; 
     &quot;http://www.opensymphony.com/xwork/xwork-1.0.dtd&quot;&gt;
 &lt;xwork&gt;
@@ -167,7 +199,12 @@
                         &lt;result name=&quot;success&quot; type=&quot;velocity&quot;&gt;add_success.vm&lt;/result&gt;
                 &lt;/action&gt;
         &lt;/package&gt;
-&lt;/xwork&gt;</pre></div></div></div></div>
+&lt;/xwork&gt;</pre>
+</div>
+</div>
+</div>
+</div>
+
 </div><!-- article -->
 
 </div><!-- contents_center -->
@@ -175,7 +212,7 @@
 <div id="footer">
 <address>  &copy; Copyright
   
-          2007,
+          2008,
     
       </address>
 <div class="line"><span class="hide">spacer</span></div>

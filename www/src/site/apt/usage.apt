@@ -2,8 +2,19 @@
 
 *設定
 
-Struts2 Seasar PluginのJarファイルと{{{http://s2xwork.sandbox.seasar.org/s2-xwork2/}S2XWork2}}のJarファイルをWEB-INF/libにコピーするだけで、
-ActionなどのインスタンスをS2Containerから取得するようになります。
+**Struts2 Seasa PluginとS2XWork2のライブラリを追加
+
+	Struts2 Seasar PluginのJarファイルと{{{http://s2xwork.sandbox.seasar.org/s2-xwork2/}S2XWork2}}のJarファイルをWEB-INF/libにコピー
+
+**web.xmlにS2ContainerListenerを追加
+
+----------------------------------------
+<listener>
+	<listener-class>
+		org.seasar.framework.container.servlet.S2ContainerListener
+	</listener-class>
+</listener>
+----------------------------------------
 
 その他の機能
 
